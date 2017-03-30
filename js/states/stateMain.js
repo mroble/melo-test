@@ -51,6 +51,10 @@ var StateMain = {
 
         this.robotSize = .5;
 
+        //load background
+        this.background=game.add.sprite(0,0,"background");
+        this.background.sendToBack();
+
         //load map
         this.map = game.add.tilemap("map");
         this.map.addTilesetImage("tiles");
@@ -157,7 +161,7 @@ var StateMain = {
             this.doGameOver();
         }
     }
-    , 
+    ,
     doGameOver:function()
     {
         gameMedia.playSound(this.boomSound);
