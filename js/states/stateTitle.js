@@ -6,7 +6,7 @@ var StateTitle = {
     }
     , create: function () {
 
-        var titleText = game.add.text(game.width / 2, game.height / 2 - 100, "Robot Bomb Squad");
+        var titleText = game.add.text(game.width / 2, game.height / 2 - 100, "Melo The Umang Boy");
         titleText.fill = "#ffffff";
         titleText.anchor.set(0.5, 0.5);
 

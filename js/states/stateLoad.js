@@ -20,7 +20,7 @@ var StateLoad = {
         //PRELOAD EVERYTHING HERE
         game.load.spritesheet("buttons", "images/ui/buttons-red.png", 265, 75);
         game.load.spritesheet("soundButtons", "images/ui/soundButtons-blue.png", 44, 44, 4);
-        game.load.audio("backgroundMusic", "audio/background/background.mp3");
+        game.load.audio("backgroundMusic", "audio/background/bubbling.wav");
 
         game.load.audio("boom", "audio/sfx/boom.mp3");
         game.load.audio("collect", "audio/sfx/collect.mp3");
