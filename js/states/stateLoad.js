@@ -34,7 +34,7 @@ var StateLoad = {
         game.load.image("tiles", "images/tiles.png");
 
         game.load.spritesheet("arrow", "images/arrowButtons.png", 60, 60, 4);
-        game.load.spritesheet("monster", "images/main/monsters.png", 50, 50, 2);
+        game.load.spritesheet("monster", "images/main/monsters.png", 50, 50, 4);
 
         game.load.image("bar1", "images/timer/bar1.png");
         game.load.image("bar2", "images/timer/bar2.png");

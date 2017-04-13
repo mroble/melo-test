@@ -178,7 +178,7 @@ var StateMain = {
             monster.body.collideWorldBounds = true;
             monster.name = "monster";
 
-            monster.animations.add("move", [0, 1], 12, true);
+            monster.animations.add("move", [0], 12, true);
             monster.animations.play("move");
         }
     }
