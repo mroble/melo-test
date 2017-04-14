@@ -61,7 +61,7 @@ var StateMain = {
 
         this.layer = this.map.createLayer("Tile Layer 1");
         this.layer.resizeWorld();
-        this.map.setCollisionBetween(0, 14);
+        this.map.setCollisionBetween(0, 15);
 
 
 
