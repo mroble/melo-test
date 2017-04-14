@@ -11,8 +11,10 @@ var StateMain = {
 
     create: function () {
 
-        this.numberOfMaps = 2;
+        this.numberOfMaps = 1;
+        //check this line
         this.bombCount = [4, 10];
+        //check this line
         this.need = this.bombCount[level - 1];
         this.collected = 0;
 
@@ -32,7 +34,7 @@ var StateMain = {
 
         this.tickSound = game.add.audio("tick");
         this.collectSound = game.add.audio("collect");
-        this.jumpSound = game.add.audio("jump");
+        //change sound for the game over below this
         this.boomSound = game.add.audio("boom");
 
         //define background music
@@ -194,15 +196,9 @@ var StateMain = {
         gameMedia.playSound(this.collectSound);
 
 
-        if (this.collected == this.need) {
-            level++;
-            if (level > this.numberOfMaps) {
-                level = 1;
-            }
-            if (this.level > this.numberOfMaps) {
-                level = 1;
-            }
-            game.state.start("StateMain");
+        if (this.collected == 4) {
+            game.state.start("StateVictory");
+
         }
     }
     , reverseMonster: function (monster, layer) {

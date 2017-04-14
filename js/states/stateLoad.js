@@ -24,7 +24,6 @@ var StateLoad = {
 
         game.load.audio("boom", "audio/sfx/boom.mp3");
         game.load.audio("collect", "audio/sfx/collect.mp3");
-        game.load.audio("jump", "audio/sfx/jump.mp3");
         game.load.audio("tick", "audio/sfx/tick.mp3");
 
         game.load.image("background","images/main/background.png");
