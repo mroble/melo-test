@@ -197,7 +197,7 @@ var StateMain = {
 
 
         if (this.collected == 2) {
-            game.state.start("StateVictory");
+            game.state.start("StateMain");
 
         }
     }
