@@ -12,7 +12,7 @@ var StateVictory = {
         console.log(this);
 
         this.btnPlayAgain = gameButtons.addButton("playAgain", -1, -1, this.playAgain, this);
-        console.log("over2");
+
     }
     , playAgain: function () {
         game.state.start("StateMain");
