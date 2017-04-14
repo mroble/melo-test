@@ -61,7 +61,7 @@ var StateMain = {
 
         this.layer = this.map.createLayer("Tile Layer 1");
         this.layer.resizeWorld();
-        this.map.setCollisionBetween(0, 15);
+        this.map.setCollisionBetween(0, 14);
 
 
 
@@ -135,7 +135,10 @@ var StateMain = {
 
         game.camera.follow(this.robot);
         cursors = game.input.keyboard.createCursorKeys();
-        this.map.setTileIndexCallback(25, this.gotBomb, this);
+        this.map.setTileIndexCallback(15, this.gotBomb, this);
+        this.map.setTileIndexCallback(16, this.gotBomb, this);
+        this.map.setTileIndexCallback(17, this.gotBomb, this);
+        this.map.setTileIndexCallback(18, this.gotBomb, this);
 
         this.makeMonsters();
 
