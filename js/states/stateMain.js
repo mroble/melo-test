@@ -114,9 +114,9 @@ var StateMain = {
 
 
         this.robot = game.add.sprite(150, 150, "robot");
-        this.robot.animations.add("idle", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 12, true);
-        this.robot.animations.add("walk", [10, 11, 12, 13, 14, 15, 16, 17], 12, true);
-        this.robot.animations.add("jump", [18, 19, 20, 21, 22, 23, 24, 25], 12, false);
+        this.robot.animations.add("idle", [0], 12, true);
+        this.robot.animations.add("walk", [1,2], 12, true);
+        this.robot.animations.add("jump", [3,4], 12, false);
 
         this.robot.scale.x = this.robotSize;
         this.robot.scale.y = this.robotSize;
@@ -137,10 +137,13 @@ var StateMain = {
 
         game.camera.follow(this.robot);
         cursors = game.input.keyboard.createCursorKeys();
+
         this.map.setTileIndexCallback(16, this.gotBomb, this);
         this.map.setTileIndexCallback(17, this.gotBomb, this);
         this.map.setTileIndexCallback(18, this.gotBomb, this);
         this.map.setTileIndexCallback(19, this.gotBomb, this);
+        this.map.setTileIndexCallback(20, this.gotBomb, this);
+        this.map.setTileIndexCallback(21, this.gotBomb, this);
 
         this.makeMonsters();
 
@@ -171,7 +174,14 @@ var StateMain = {
     {
         gameMedia.playSound(this.boomSound);
         game.state.start("StateOver");
+    },
+
+    doVictory:function()
+    {
+        gameMedia.playSound(this.victoryMusic);
+        game.state.start("StateVictory");
     }
+
     , makeMonsters: function () {
         for (var i = 0; i < 10; i++) {
             var monster = this.monsterGroup.getFirstDead();
@@ -196,8 +206,8 @@ var StateMain = {
         gameMedia.playSound(this.collectSound);
 
 
-        if (this.collected == 2) {
-            game.state.start("StateMain");
+        if (this.collected == 3) {
+            this.doVictory();
 
         }
     }
