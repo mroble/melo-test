@@ -13,7 +13,7 @@ var StateCredits = {
         //@freesound.org
         //find out about applause sound.
         //Graphics from the 2D Unity Underwater Pack
-        //
+        //Shiny buttons by icojoy.com
         titleText.fill = "#ffffff";
         titleText.anchor.set(0.5, 0.5);
 

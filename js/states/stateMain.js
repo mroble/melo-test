@@ -116,7 +116,7 @@ var StateMain = {
         this.robot = game.add.sprite(150, 150, "robot");
         this.robot.animations.add("idle", [0], 12, true);
         this.robot.animations.add("walk", [1,2], 12, true);
-        this.robot.animations.add("jump", [3,4], 12, false);
+        this.robot.animations.add("jump", [3], 12, false);
 
         this.robot.scale.x = this.robotSize;
         this.robot.scale.y = this.robotSize;
@@ -174,13 +174,13 @@ var StateMain = {
     {
         gameMedia.playSound(this.boomSound);
         game.state.start("StateOver");
-    },
-
-    doVictory:function()
-    {
-        gameMedia.playSound(this.victoryMusic);
-        game.state.start("StateVictory");
     }
+
+    //doVictory:function()
+    //{
+      //  gameMedia.playSound(this.victoryMusic);
+        //game.state.start("StateVictory");
+    //}
 
     , makeMonsters: function () {
         for (var i = 0; i < 10; i++) {
@@ -207,7 +207,9 @@ var StateMain = {
 
 
         if (this.collected == 3) {
-            this.doVictory();
+            //fix sound on this
+           gameMedia.playSound(this.victoryMusic);
+            game.state.start("StateVictory");
 
         }
     }
