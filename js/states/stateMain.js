@@ -10,13 +10,14 @@ var StateMain = {
     },
 
     create: function () {
+        score = 0;
 
         this.numberOfMaps = 1;
         //check this line
         this.bombCount = [4, 10];
         //check this line
         this.need = this.bombCount[level - 1];
-        this.collected = 0;
+
 
         //add sound buttons
         this.btnMusic = gameButtons.addAudioButton("music", 20, 20, gameButtons.toggleMusic, this);
@@ -47,7 +48,18 @@ var StateMain = {
         //init the sound buttons
         gameButtons.updateButtons();
 
+        //text
+        this.scoreText=game.add.text(game.world.centerX+125, 100, "0");
+        this.scoreText.fill="ffff00";
+        this.scoreText.fontSize = 64;
+        this.scoreText.anchor.set(0.5, 0.5);
+        this.scoreText.fixedToCamera = true;
 
+        this.scoreLabel=game.add.text(game.world.centerX, 100, "Score: ");
+        this.scoreLabel.fill="ffff00";
+        this.scoreLabel.fontSize = 64;
+        this.scoreLabel.anchor.set(0.5, 0.5);
+        this.scoreLabel.fixedToCamera = true;
 
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -202,8 +214,10 @@ var StateMain = {
             return;
         }
         this.map.removeTile(tile.x, tile.y, this.layer);
-        this.collected++;
+        this.score++;
+        this.scoreText.text = score;
         gameMedia.playSound(this.collectSound);
+
 
 
         if (this.collected == 3) {
