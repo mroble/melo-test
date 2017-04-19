@@ -28,6 +28,7 @@ var StateLoad = {
         //game.load.audio("tick", "audio/sfx/tick.mp3");
 
         game.load.image("background","images/main/background.png");
+        game.load.image("title", "images/title.png");
 
         //sprite width, height, #of cells
         game.load.spritesheet("robot", "images/main/robot.png", 220, 145, 4);

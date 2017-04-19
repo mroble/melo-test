@@ -48,19 +48,23 @@ var StateTitle = {
     ];
 
     filter = new Phaser.Filter(game, null, fragmentSrc);
-    filter.setResolution(800, 600);
+    filter.setResolution(3200, 1280);
 
     sprite = game.add.sprite();
-    sprite.width = 800;
-    sprite.height = 600;
+    sprite.width = 3200;
+    sprite.height = 1280;
 
     sprite.filters = [ filter ];
 
-     var titleText = game.add.text(game.width / 2, game.height / 2 - 100, "Melo The Umang Boy");
-        titleText.fill = "#ffffff";
-        titleText.anchor.set(0.5, 0.5);
+     //var titleText = game.add.text(game.width / 2, game.height / 2 - 100, "Melo The Umang Boy");
+       // titleText.fill = "#ffffff";
+        //titleText.anchor.set(0.5, 0.5);
 
-        this.btnStart = gameButtons.addButton("start", -1, -1, this.startGame, this);
+    this.title=game.add.sprite(game.world.centerX-200,game.world.centerY-175, "title");
+
+    this.btnStart = gameButtons.addButton("start", -1, -1, this.startGame, this);
+
+
 
     }
     , startGame: function () {
