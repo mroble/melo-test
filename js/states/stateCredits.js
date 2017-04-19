@@ -7,6 +7,8 @@ var StateCredits = {
     , create: function () {
 
         var titleText = game.add.text(game.width / 2, game.height / 2 - 100, "Credits");
+        //Based on the SariSari Storybooks title, "Melo The Umang Boy c. 2017"
+        //Buttons (when you add them) by Kenney.nl
         //find out how to add other text
         //Sound:
         //Bubbling Music courtesy of MattJ99 <---check this spelling

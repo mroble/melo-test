@@ -136,6 +136,7 @@ var StateMain = {
         this.robot.animations.play("idle");
         this.robot.anchor.set(0.5, 0.5);
         //the position below will start melo at the first green platform
+        //change later if you want.
         //this.robot.x= 200;
         //this.robot.y = 610;
 

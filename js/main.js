@@ -10,6 +10,8 @@ var gameMedia
     //PLACE YOUR OWN GLOBALS HERE
 var cursors;
 var level = 1;
+var filter;
+var sprite;
 
 //portrait or landscape
 
