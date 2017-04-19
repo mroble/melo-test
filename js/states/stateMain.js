@@ -50,14 +50,14 @@ var StateMain = {
 
         //text
         this.scoreText=game.add.text(game.world.centerX+125, 100, "0");
-        this.scoreText.fill="ffff00";
-        this.scoreText.fontSize = 64;
+        this.scoreText.fill="#ffff00";
+        this.scoreText.fontSize = 55;
         this.scoreText.anchor.set(0.5, 0.5);
         this.scoreText.fixedToCamera = true;
 
         this.scoreLabel=game.add.text(game.world.centerX, 100, "Score: ");
-        this.scoreLabel.fill="ffff00";
-        this.scoreLabel.fontSize = 64;
+        this.scoreLabel.fill="#ffff00";
+        this.scoreLabel.fontSize = 55;
         this.scoreLabel.anchor.set(0.5, 0.5);
         this.scoreLabel.fixedToCamera = true;
 
@@ -135,6 +135,10 @@ var StateMain = {
 
         this.robot.animations.play("idle");
         this.robot.anchor.set(0.5, 0.5);
+        //the position below will start melo at the first green platform
+        //this.robot.x= 200;
+        //this.robot.y = 610;
+
 
         this.monsterGroup = game.add.group();
         this.monsterGroup.createMultiple(10, "monster");
