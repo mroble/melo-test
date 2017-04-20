@@ -219,7 +219,7 @@ var StateMain = {
             return;
         }
         this.map.removeTile(tile.x, tile.y, this.layer);
-        this.score++;
+        score++;
         this.scoreText.text = score;
         gameMedia.playSound(this.collectSound);
 

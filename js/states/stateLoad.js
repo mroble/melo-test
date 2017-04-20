@@ -23,7 +23,7 @@ var StateLoad = {
         game.load.audio("backgroundMusic", "audio/background/bubbling.wav");
         game.load.audio("victoryMusic", "audio/sfx/applause.mp3");
 
-        //game.load.audio("boom", "audio/sfx/boom.mp3");
+        game.load.audio("boom", "audio/sfx/boom.mp3");
         game.load.audio("collect", "audio/sfx/collect.mp3");
         //game.load.audio("tick", "audio/sfx/tick.mp3");
 
