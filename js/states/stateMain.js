@@ -193,11 +193,6 @@ var StateMain = {
         game.state.start("StateOver");
     }
 
-    //doVictory:function()
-    //{
-      //  gameMedia.playSound(this.victoryMusic);
-        //game.state.start("StateVictory");
-    //}
 
     , makeMonsters: function () {
         for (var i = 0; i < 10; i++) {
@@ -225,10 +220,10 @@ var StateMain = {
 
 
 
-        if (this.collected == 3) {
+        if (score == 1) {
             //fix sound on this
-           gameMedia.playSound(this.victoryMusic);
             game.state.start("StateVictory");
+            gameMedia.playSound(this.victoryMusic);
 
         }
     }
