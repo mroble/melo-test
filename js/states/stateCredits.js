@@ -16,6 +16,8 @@ var StateCredits = {
         //find out about applause sound.
         //Graphics from the 2D Unity Underwater Pack
         //Shiny buttons by icojoy.com
+        //applause: author blender foundation --edited version of Yo Frankie!'s end game sound
+        //(http://opengameart.org/content/endgame).
         titleText.fill = "#ffffff";
         titleText.anchor.set(0.5, 0.5);
 

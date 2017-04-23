@@ -222,8 +222,9 @@ var StateMain = {
 
         if (score == 1) {
             //fix sound on this
-            game.state.start("StateVictory");
             gameMedia.playSound(this.victoryMusic);
+            game.state.start("StateVictory");
+
 
         }
     }
