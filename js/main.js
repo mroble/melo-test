@@ -10,9 +10,11 @@ var gameMedia
     //PLACE YOUR OWN GLOBALS HERE
 var cursors;
 var level = 1;
-var filter;
-var sprite;
 
+
+var manager = null;
+var emitter = null;
+var current = 0;
 //portrait or landscape
 
 var useLandscape = true;
@@ -48,7 +50,6 @@ window.onload = function () {
 
 
     //add a state or screen to the game
-
     game.state.add("StateLoad", StateLoad);
     game.state.add("StateInit", StateInit);
     game.state.add("StateTitle", StateTitle);
