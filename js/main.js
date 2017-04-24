@@ -11,10 +11,6 @@ var gameMedia
 var cursors;
 var level = 1;
 
-
-var manager = null;
-var emitter = null;
-var current = 0;
 //portrait or landscape
 
 var useLandscape = true;

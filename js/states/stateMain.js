@@ -33,10 +33,11 @@ var StateMain = {
 
         //define sounds here
 
-        this.tickSound = game.add.audio("tick");
+        //this.tickSound = game.add.audio("tick");
         this.collectSound = game.add.audio("collect");
         //change sound for the game over below this
         this.boomSound = game.add.audio("boom");
+        this.victoryMusic=game.add.audio("victoryMusic");
 
         //define background music
         this.backgroundMusic = game.add.audio("backgroundMusic");
@@ -221,10 +222,8 @@ var StateMain = {
 
 
         if (score == 1) {
-            //fix sound on this
             gameMedia.playSound(this.victoryMusic);
             game.state.start("StateVictory");
-
 
         }
     }

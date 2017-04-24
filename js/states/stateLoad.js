@@ -32,7 +32,6 @@ var StateLoad = {
         game.load.image("water", "images/main/background_title.png");
 
 
-
         //sprite width, height, #of cells
         game.load.spritesheet("robot", "images/main/robot.png", 220, 145, 4);
         game.load.image("tiles", "images/tiles.png");

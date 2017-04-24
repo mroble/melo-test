@@ -1,14 +1,8 @@
-
-
-var StateTitle = {
-
-    //  Bubble extends ParticleStorm.Particle
-
 //Bubble = function (manager) {
 
   //  Phaser.ParticleStorm.Particle.call(this, manager);
 
-//},
+//};
 
 //Bubble.prototype = Object.create(Phaser.ParticleStorm.Particle.prototype);
 //Bubble.prototype.constructor = Bubble;
@@ -17,8 +11,8 @@ var StateTitle = {
 
     //  Child bubbles are killed if the parent is already at the top of the screen
   //  if (parent.transform.y < 0)
-   // {
-     //   return false;
+    //{
+      //  return false;
     //}
 
     //  Child bubbles are smaller than their parent
@@ -37,7 +31,7 @@ var StateTitle = {
     //this.transform.velocity.x.value = (Math.random() - 0.5);
     //this.transform.velocity.y.value = -Math.random();
 
-  //  return true;
+    //return true;
 
 //};
 
@@ -54,12 +48,22 @@ var StateTitle = {
 //};
 
 
+//var manager = null;
+//var emitter = null;
+//var current = 0;
+
+var StateTitle = {
+
+
+
     preload: function () {
-       // game.forceSingleUpdate = true;
-
+        PIXI.canUseNewCanvasBlendModes = function () { return this.game.device.canUseMultiply; }
+        game.forceSingleUpdate = true;
         //game.load.path = 'images/particlestorm/particles/';
-
         //game.load.images([ 'bubble' ]);
+        game.load.image("bubble", "images/particlestorm/particles/bubble.png");
+
+
 
 
     },
@@ -75,40 +79,41 @@ var StateTitle = {
         gameMedia.updateMusic();
 
 
-        this.water=game.add.sprite(0,0,"water");
+       this.water=game.add.sprite(0,0,"water");
         this.water.sendToBack();
 
         this.title=game.add.sprite(game.world.centerX-200,game.world.centerY-175, "title");
 
         this.btnStart = gameButtons.addButton("start", -1, -1, this.startGame, this);
 
-        //manager = this.game.plugins.add(Phaser.ParticleStorm);
+  //      manager = this.game.plugins.add(Phaser.ParticleStorm);
 
     //  This example illustrates:
 
-   // var bubbles = {
-     //   image: 'bubble',
-       // blendMode: 'ADD',
-        //lifespan: 3000,
-       // vx: { value: { min: -2, max: 2 }, control: [ { x: 0, y: 1 }, { x: 1, y: 0.1 } ] },
-       // vy: { value: 0, control: [ { x: 0, y: 1 }, { x: 1, y: 0.1 } ] },
-       // scale: { min: 0.25, max: 0.90 },
-       // emit: {
-        //    name: 'bubbles',
-        //    value: 0, at: [ { time: 1, value: 5 } ],
-         //   inherit: { vx: true }
-       // }
-    //};
+  //  var bubbles = {
+    //    image: 'bubble',
+     //   blendMode: 'ADD',
+      //  lifespan: 3000,
+     //   vx: { value: { min: -2, max: 2 }, control: [ { x: 0, y: 1 }, { x: 1, y: 0.1 } ] },
+      //  vy: { value: 0, control: [ { x: 0, y: 1 }, { x: 1, y: 0.1 } ] },
+      //  scale: { min: 0.25, max: 0.90 },
+     //   emit: {
+       //     name: 'bubbles',
+       //     value: 0, at: [ { time: 1, value: 5 } ],
+        //    inherit: { vx: true }
+     //   }
+   // };
 
-    //manager.addData('bubbles', bubbles);
+  //  manager.addData('bubbles', bubbles);
 
-    //emitter = manager.createEmitter();
+  //  emitter = manager.createEmitter();
 
-   // emitter.particleClass = Bubble;
+  //  emitter.particleClass = Bubble;
 
-    //emitter.addToWorld();
+  //  emitter.addToWorld();
 
-    //emitter.emit('bubbles', [-100, 900], 620, { repeat: -1, frequency: 10 });
+  //  emitter.emit('bubbles', [-300, 800], 620, { repeat: -1, frequency: 10 });
+
 
 
     }
@@ -118,12 +123,12 @@ var StateTitle = {
     }
 
 
-    , update: function () {
+   // , update: function () {
          //  Make a current that blows left or right slowly changing strength and direction
-    //current = Math.max(Math.min(current + (Math.random() - .5) *.001, .05), -.05);
+   // current = Math.max(Math.min(current + (Math.random() - .5) *.001, .05), -.05);
 
-    //emitter.force.x = current;
+   // emitter.force.x = current;
 
-    }
+    //}
 
 }
