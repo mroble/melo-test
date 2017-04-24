@@ -80,7 +80,7 @@ var StateTitle = {
 
         this.title=game.add.sprite(game.world.centerX-200,game.world.centerY-175, "title");
 
-        this.btnPlayAgain = gameButtons.addButton("playAgain", -1, -1, this.playAgain, this);
+        this.btnStart = gameButtons.addButton("start", -1, -1, this.startGame, this);
 
         //manager = this.game.plugins.add(Phaser.ParticleStorm);
 
@@ -113,7 +113,7 @@ var StateTitle = {
 
     }
 
-    , playAgain: function () {
+    , startGame: function () {
         game.state.start("StateMain");
     }
 
