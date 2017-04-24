@@ -29,6 +29,9 @@ var StateLoad = {
 
         game.load.image("background","images/main/background.png");
         game.load.image("title", "images/title.png");
+        game.load.image("water", "images/particlestorm/water_texture.jpg");
+
+
 
         //sprite width, height, #of cells
         game.load.spritesheet("robot", "images/main/robot.png", 220, 145, 4);

@@ -66,8 +66,17 @@ var StateTitle = {
 
     create: function () {
 
-        this.background=game.add.sprite(0,0,"background");
-        this.background.sendToBack();
+          //define background music
+        this.backgroundMusic = game.add.audio("backgroundMusic");
+        //pass the background music to the gameMedia object
+        gameMedia.setBackgroundMusic(this.backgroundMusic);
+
+        //init the music
+        gameMedia.updateMusic();
+
+
+        this.water=game.add.sprite(0,0,"water");
+        this.water.sendToBack();
 
         this.title=game.add.sprite(game.world.centerX-200,game.world.centerY-175, "title");
 
