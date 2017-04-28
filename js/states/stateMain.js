@@ -14,9 +14,9 @@ var StateMain = {
 
         this.numberOfMaps = 1;
         //check this line
-        this.bombCount = [4, 10];
-        //check this line
+        this.bombCount = [4];
         this.need = this.bombCount[level - 1];
+
 
 
         //add sound buttons
@@ -76,9 +76,7 @@ var StateMain = {
 
         this.layer = this.map.createLayer("Tile Layer 1");
         this.layer.resizeWorld();
-        this.map.setCollisionBetween(0, 15);
-
-
+        this.map.setCollisionBetween(0, 12);
 
         this.upArrow = game.add.sprite(0, 0, "arrow");
         this.downArrow = game.add.sprite(0, 50, "arrow");
@@ -156,12 +154,11 @@ var StateMain = {
         game.camera.follow(this.robot);
         cursors = game.input.keyboard.createCursorKeys();
 
+        this.map.setTileIndexCallback(13, this.gotBomb, this);
+        this.map.setTileIndexCallback(14, this.gotBomb, this);
+        this.map.setTileIndexCallback(15, this.gotBomb, this);
         this.map.setTileIndexCallback(16, this.gotBomb, this);
-        this.map.setTileIndexCallback(17, this.gotBomb, this);
-        this.map.setTileIndexCallback(18, this.gotBomb, this);
-        this.map.setTileIndexCallback(19, this.gotBomb, this);
-        this.map.setTileIndexCallback(20, this.gotBomb, this);
-        this.map.setTileIndexCallback(21, this.gotBomb, this);
+
 
         this.makeMonsters();
 
@@ -221,7 +218,7 @@ var StateMain = {
 
 
 
-        if (score == 1) {
+        if (score == 4) {
             gameMedia.playSound(this.victoryMusic);
             game.state.start("StateVictory");
 
