@@ -1,3 +1,5 @@
+var score = 0;
+
 var StateMain = {
 
     preload: function () {
@@ -54,13 +56,21 @@ var StateMain = {
         this.scoreText.fill="#ffff00";
         this.scoreText.fontSize = 55;
         this.scoreText.anchor.set(0.5, 0.5);
-        this.scoreText.fixedToCamera = true;
+        //this.scoreText.fixedToCamera = true;
 
         this.scoreLabel=game.add.text(game.world.centerX, 100, "Score: ");
         this.scoreLabel.fill="#ffff00";
         this.scoreLabel.fontSize = 55;
         this.scoreLabel.anchor.set(0.5, 0.5);
-        this.scoreLabel.fixedToCamera = true;
+        //this.scoreLabel.fixedToCamera = true;
+
+        this.scoreGroup = game.add.group();
+        this.scoreGroup.add(this.scoreLabel);
+        this.scoreGroup.add(this.scoreText);
+        this.scoreGroup.fixedToCamera = true;
+
+
+
 
         game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -160,7 +170,7 @@ var StateMain = {
         this.map.setTileIndexCallback(15, this.gotBomb, this);
 
 
-        this.makeMonsters();
+        //this.makeMonsters();
 
 
         game.world.bringToTop(this.buttonGroup);
@@ -192,21 +202,21 @@ var StateMain = {
     }
 
 
-    , makeMonsters: function () {
-        for (var i = 0; i < 10; i++) {
-            var monster = this.monsterGroup.getFirstDead();
-            var xx = game.rnd.integerInRange(0, game.world.width);
-            monster.reset(xx, 50);
-            monster.enabled = true;
-            monster.body.velocity.x = -100;
-            monster.body.gravity.y = 100;
-            monster.body.collideWorldBounds = true;
-            monster.name = "monster";
+    //, makeMonsters: function () {
+      //  for (var i = 0; i < 10; i++) {
+          //  var monster = this.monsterGroup.getFirstDead();
+        //    var xx = game.rnd.integerInRange(0, game.world.width);
+         //   monster.reset(xx, 50);
+          //  monster.enabled = true;
+          //  monster.body.velocity.x = -100;
+          //  monster.body.gravity.y = 100;
+         //   monster.body.collideWorldBounds = true;
+         //   monster.name = "monster";
 
-            monster.animations.add("move", [0], 12, true);
-            monster.animations.play("move");
-        }
-    }
+         //   monster.animations.add("move", [0], 12, true);
+         //   monster.animations.play("move");
+       // }
+    //}
     , gotBomb: function (sprite, tile) {
         if (sprite.name == "monster") {
             return;
@@ -223,23 +233,23 @@ var StateMain = {
             game.state.start("StateVictory");
 
         }
-    }
-    , reverseMonster: function (monster, layer) {
-        if (monster.body.blocked.left == true) {
-            monster.body.velocity.x = 100;
-        }
-        if (monster.body.blocked.right == true) {
-            monster.body.velocity.x = -100;
-        }
-    }
-    , hitMonster: function (player, monster) {
-        if (player.y < monster.y) {
-            monster.kill();
-        } else {
-            //console.log("game over");
-            this.doGameOver();
-        }
     },
+  //  , reverseMonster: function (monster, layer) {
+   //     if (monster.body.blocked.left == true) {
+   //         monster.body.velocity.x = 100;
+    //    }
+     //   if (monster.body.blocked.right == true) {
+      //      monster.body.velocity.x = -100;
+     //   }
+   // }
+   // , hitMonster: function (player, monster) {
+    //    if (player.y < monster.y) {
+     //       monster.kill();
+     //   } else {
+            //console.log("game over");
+     //       this.doGameOver();
+      //  }
+    //},
 
     update: function () {
         game.physics.arcade.collide(this.robot, this.layer);

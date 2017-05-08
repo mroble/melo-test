@@ -1,6 +1,6 @@
 var game;
 var score;
-var scoreText;
+//var scoreText;
 //var highScore;
 var soundOn = true;
 var musicOn = true;
